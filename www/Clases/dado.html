@@ -1,0 +1,130 @@
+<html>
+
+<head>
+
+    <title>Dados</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #contenedor {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border: 5px, solid red;
+
+        }
+
+        #dos,
+        #siete {
+            grid-column-start: 3;
+        }
+
+        #div {
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: lime;
+            font-weight: bold;
+        }
+        img {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="contenedor">
+
+        <img id="uno" src="http://lnd.angelmelchor.pro/circle.svg">
+        <img id="dos" src="http://lnd.angelmelchor.pro/circle.svg">
+        <img id="tres" src="http://lnd.angelmelchor.pro/circle.svg">
+        <img id="cuatro" src="http://lnd.angelmelchor.pro/circle.svg">
+        <img id="cinco" src="http://lnd.angelmelchor.pro/circle.svg">
+        <img id="seis" src="http://lnd.angelmelchor.pro/circle.svg">
+        <img id="siete" src="http://lnd.angelmelchor.pro/circle.svg">
+
+    </div>
+    <div>
+        <button onclick="rollDice()">Roll the Dice</button>
+    </div>
+
+    <script>
+        let eluno=document.getElementById("uno");
+        let eldos=document.getElementById("dos");
+        let eltres=document.getElementById("tres");
+        let elcuatro=document.getElementById("cuatro");
+        let elcinco=document.getElementById("cinco");
+        let elseis=document.getElementById("seis");
+        let elsiete=document.getElementById("siete");
+         function rollDice() {
+            const dado=Math.ceil(Math.random()*6);
+            switch (dado) {
+                case 1: eluno.style.visibility="hidden";
+                eldos.style.visibility="hidden";
+                eltres.style.visibility="hidden";
+                elcuatro.style.visibility="visible";
+                elcinco.style.visibility="hidden";
+                elseis.style.visibility="hidden";
+                elsiete.style.visibility="hidden";
+                break;
+
+                 case 2: eluno.style.visibility="visible";
+                eldos.style.visibility="hidden";
+                eltres.style.visibility="hidden";
+                elcuatro.style.visibility="hidden";
+                elcinco.style.visibility="hidden";
+                elseis.style.visibility="hidden";
+                elsiete.style.visibility="visible";
+                break;
+
+                 case 3: eluno.style.visibility="visible";
+                eldos.style.visibility="hidden";
+                eltres.style.visibility="hidden";
+                elcuatro.style.visibility="visible";
+                elcinco.style.visibility="hidden";
+                elseis.style.visibility="hidden";
+                elsiete.style.visibility="visible";
+                break;
+
+                 case 4: eluno.style.visibility="visible";
+                eldos.style.visibility="visible";
+                eltres.style.visibility="hidden";
+                elcuatro.style.visibility="hidden";
+                elcinco.style.visibility="hidden";
+                elseis.style.visibility="visible";
+                elsiete.style.visibility="visible";
+                break;
+
+                 case 5: eluno.style.visibility="visible";
+                eldos.style.visibility="visible";
+                eltres.style.visibility="hidden";
+                elcuatro.style.visibility="visible";
+                elcinco.style.visibility="hidden";
+                elseis.style.visibility="visible";
+                elsiete.style.visibility="visible";
+                break;
+
+                case 6: eluno.style.visibility="visible";
+                eldos.style.visibility="visible";
+                eltres.style.visibility="visible";
+                elcuatro.style.visibility="hidden";
+                elcinco.style.visibility="visible";
+                elseis.style.visibility="visible";
+                elsiete.style.visibility="visible";
+                break;
+
+            }
+        }
+    </script>
+</body>
+
+</html>

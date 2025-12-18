@@ -1,0 +1,90 @@
+
+<!-- saved from url=(0041)http://10.104.255.0:8001/ejercicio2a.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>Domótica</title>
+
+        
+
+        <style>
+
+            body> div {
+
+                display:flex;
+
+                flex-direction:column;
+
+                justify-content:center;
+
+                align-items:center;
+
+                height:90vh;
+
+            }
+
+            div div {
+
+                margin:1em;
+
+            }
+
+            button {
+
+                width:100px;
+
+                height:50px;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div>
+
+            <div>
+
+                <img id="bombilla" src="./Domótica_files/bulboff.gif">
+
+            </div>
+
+            <div>
+
+                <button id="botonon" onclick="encender()">On</button>
+
+            </div>
+
+            <div>
+
+                <button id="botonoff" onclick="apagar()">Off</button>
+
+            </div>
+
+        </div>
+        <script>
+            const elementoImg=document.getElementById("bombilla");
+            const elementoBotonOn=document.getElementById("botonon");
+            const elementoBotonOff=document.getElementById("botonoff");
+            function encender() {
+                elementoImg.src="http://lnd.angelmelchor.pro/bulbon.gif";
+                elementoBotonOn.style.color="white";
+                elementoBotonOn.style.backgroundColor="green";
+                elementoBotonOff.style.color="black";
+                elementoBotonOff.style.backgroundColor="lightgray";
+            }
+            function apagar() {
+                elementoImg.src="http://lnd.angelmelchor.pro/bulboff.gif";
+                elementoBotonOff.style.color="white";
+                elementoBotonOff.style.backgroundColor="red";
+                elementoBotonOn.style.color="black";
+                elementoBotonOn.style.backgroundColor="lightgray";
+            }
+        </script>
+
+    
+
+
+
+</body></html>

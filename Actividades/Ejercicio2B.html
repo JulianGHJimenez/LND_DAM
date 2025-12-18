@@ -1,0 +1,87 @@
+
+<!-- saved from url=(0041)http://10.104.255.0:8001/ejercicio2b.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>Domótica</title>
+
+        
+
+        <style>
+
+            body> div {
+
+                display:flex;
+
+                flex-direction:column;
+
+                justify-content:center;
+
+                align-items:center;
+
+                height:90vh;
+
+            }
+
+            div div {
+
+                margin:1em;
+
+            }
+
+            button {
+
+                width:100px;
+
+                height:50px;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div>
+
+            <div>
+
+                <img id="bombilla" src="./Ejercicio2B_files/bulboff.gif">
+
+            </div>
+
+            <div>
+
+                <button id="botonon" onclick="conmutar()">On</button>
+
+            </div>
+
+
+        </div>
+        <script>
+            let encendida=false;
+            const elementoImg=document.getElementById("bombilla");
+            const elementoBotonOn=document.getElementById("botonon");
+            function conmutar() {
+                if (encendida){
+                    elementoImg.src="http://lnd.angelmelchor.pro/bulboff.gif";
+                    elementoBotonOn.style.color="white";
+                    elementoBotonOn.style.backgroundColor="red";
+                    elementoBotonOn.innerText="On";
+                    encendida=false;
+                }
+                else {
+                    elementoImg.src="http://lnd.angelmelchor.pro/bulbon.gif";
+                    elementoBotonOn.style.color="white";
+                    elementoBotonOn.style.backgroundColor="green";
+                    elementoBotonOn.innerText="Off";
+                    encendida=true;
+                }
+            }
+        </script>
+
+    
+
+
+
+</body></html>
