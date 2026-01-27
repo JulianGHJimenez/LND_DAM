@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript recordatorio</title>
+  </head>
+  <body>
+    
+     <div id="contenedor">
+     </div>
+
+  </body>
+     <script>
+        let imagen=[];
+        const padre=document.getElementById("contenedor");
+        for(let i=0;i<100;++i) {
+
+            imagen[i]=document.createElement("img");
+            imagen[i].src="/foto.jpg";
+            padre.insertAdjacentElement("afterbegin",imagen);
+        }
+        imagen[0].src="/circle.svg";
+    </script>
+
+</html>
