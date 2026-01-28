@@ -8,17 +8,18 @@
      <div id="contenedor">
      </div>
 
-  </body>
-     <script>
+ <script>
         let imagen=[];
         const padre=document.getElementById("contenedor");
         for(let i=0;i<100;++i) {
 
             imagen[i]=document.createElement("img");
             imagen[i].src="/foto.jpg";
-            padre.insertAdjacentElement("afterbegin",imagen);
+            padre.insertAdjacentElement("afterbegin",imagen[i]);
         }
         imagen[0].src="/circle.svg";
     </script>
 
+  </body>
+    
 </html>
