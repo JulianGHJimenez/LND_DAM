@@ -1,0 +1,101 @@
+<html>
+
+  <head>
+
+    <title>JS1</title>
+
+    <meta charset="utf-8" />
+
+    <style>
+
+      #externo {
+
+        display: flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+        height: 100%;
+
+        border: 2px solid navy;
+
+        box-sizing: border-box;
+
+        padding:100px;
+
+      }
+
+      button,p {
+
+        padding:10px;
+
+      }
+
+    </style>
+
+  </head>
+
+
+
+  <body>
+
+    <div id="externo">
+
+        <div>
+
+            <p id="parrafo">LND Javascript</p>
+
+        </div>
+        <div>
+
+            <button onclick="conmutar()" id="button">Cambiar</button>
+
+        </div>
+
+    </div>
+
+    <script>
+        let parrafo=documentElementById("parrafo");
+        let button=documentElementById("button");
+        let cambia=false;
+        let px=16;
+        let vueltas = 1;
+
+        function conmutar() {
+             if (cambia) {
+                parrafo.style.backgroundColor="cyan";
+                cambia=false;
+            }
+            else {
+                parrafo.style.backgroundColor="lime";
+                cambia=true;
+            }
+            if (px <= 50) {
+                parrafo.style.fontSize=px;
+                px++;
+                button.innerText=vueltas;
+
+            if (px==33) {
+                parrafo.innerText="mitad";
+            }
+            if (px>33) {
+                parrafo.innerText="último";
+            }
+            }
+            if (px==50) {
+                px=16;
+                parrafo.innerText="LND Javascript";
+                vueltas++;
+            }
+        }
+
+
+
+    </script>
+
+  </body>
+
+</html>
