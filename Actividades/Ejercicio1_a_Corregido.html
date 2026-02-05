@@ -1,0 +1,106 @@
+
+<html>
+
+  <head>
+
+    <title>JS1</title>
+
+    <meta charset="utf-8" />
+
+    <style>
+
+      #externo {
+
+        display: flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+        height: 100%;
+
+        border: 2px solid navy;
+
+        box-sizing: border-box;
+
+        padding:100px;
+
+      }
+
+      button,p {
+
+        padding:10px;
+
+      }
+
+    </style>
+
+  </head>
+
+
+
+  <body>
+
+    <div id="externo">
+
+        <div>
+
+            <p id="parrafo">LND Javascript</p>
+
+        </div>
+
+        <div>
+
+            <button id="boton" onclick="cambiar()">Cambiar</button>
+
+        </div>
+
+    </div>
+
+    <script>
+        let pulsado=document.getElementById("parrafo");
+        let boton=document.getElementById("boton");
+        let estado=false;
+        let altura= 16;
+        let vuelta=0;
+        function cambiar() {
+
+        switch(altura) {
+            case 33: 
+            pulsado.innertText="mitad";
+            break;
+            case 50:
+            pulsado.innertText="ultimo";
+            break;
+            default: 
+            pulsado.innertText="LND Javascript";
+            break;
+        }
+        if(estado) {
+         pulsado.style.backgroundColor="cyan";
+         estado= false;
+        }else {
+            pulsado.style.backgroundColor="lime";
+            estado= true;
+        }
+        
+        pulsado.style.fontSize=altura;
+        altura++;
+        
+            if(altura >= 50) {
+            altura = 16;
+            vuelta++;
+        }
+        boton.innertText=vuelta;
+
+        }
+
+
+    </script>
+
+  </body>
+
+</html>
+

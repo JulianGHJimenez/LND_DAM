@@ -1,11 +1,11 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <!--Tipos simples-->
+   <!--3:Tipos simples-->
    <xsd:simpleType name="telefono" >
      <xsd:restriction base="xsd:integer">
      <xsd:pattern value="[678][0-9]{8}">
      </xsd:restriction>
    </xsd:simpleType>
-   <!--Tipos complejos-->
+   <!--2:Tipos complejos-->
    <xsd:complexType name="tipoContacto">
         <xsd:sequence>
            <xsd:element name="nombre" type="xsd:string"/>
@@ -19,7 +19,8 @@
 
         </xsd:sequence>
     </xsd:complexType>
-   <!-- Elemento raiz-->
+   <!-- 1:Elemento raiz-->
    <xsd:element name="agenda" type="tipoAgenda"/>
 
 </xsd:schema>
+

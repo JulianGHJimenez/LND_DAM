@@ -1,0 +1,39 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <!--3:Tipos simples-->
+
+   <!--2:Tipos complejos-->
+   <xsd:complexType name="tipoContactoDatos">
+   <xsd:sequence>
+   <xsd:element name="telefono" type="xsd:Integer"/>
+   <xsd:element name="nombre" type="xsd:String"/>
+   </xsd:sequence>
+
+
+   <xsd:complexType name="tipoDatos">
+   <xsd:sequence>
+   <xsd:element name="contacto" type="tipoContactoDatos" minOccurs="0"/>
+   </xsd:sequence>
+
+   <xsd:complexType name="tipoContacto">
+   <xsd:sequence>
+   <xsd:element name="nombre" type="xsd:String"/>
+   <xsd:element name="apellido1" type="xsd:String"/>
+   <xsd:element name="apellido2" type="xsd:String"/>
+   <xsd:element name="direccion" type="xsd:String"/>
+   <xsd:element name="telefono" type="xsd:Integer" maxOccurs="2"/>
+   <xsd:element name="email" type="xsd:String" minOccurs="0"/>
+   <xsd:element name="fechanacimiento" type="xsd:String"/>
+   <xsd:element name="provincia" type="xsd:String"/>
+   <xsd:element name="datos" type="xsd:tipoDatos" minOccurs="0"/>
+   </xsd:sequence>
+   </xsd:complexType>
+
+    <xsd:complexType name="tipoAgenda">
+        <xsd:sequence>
+           <xsd:element name="contacto" type="tipoContacto" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+   <!-- 1:Elemento raiz-->
+   <xsd:element name="agenda" type="tipoAgenda"/>
+
+</xsd:schema>

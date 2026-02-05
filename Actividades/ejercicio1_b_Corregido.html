@@ -40,10 +40,9 @@
     }
 
     img {
-
-      width: 100%;
-
-    }
+    width:100%;
+      }
+      
   </style>
 
 </head>
@@ -57,27 +56,30 @@
     </div>
 
   </div>
-  <script>
-    let dado = getElementById("dado");
-    let punto = [];
 
-    for (let i = 0; i < 9; ++i) {
-      punto[i] = document.createElement("img")
-      punto[i].src = "/enunciados/circle.svg"
-      puntos[i].onclick = () => oculta(i);
-      punto.appendChild(punto[i])
+ <script>
+const contenedor=document.getElementById("dado")
+let imagenes=[];
+let contador = 0;
 
+function oculta(i) {
+    imagenes[i].style.visibility="hidden";
+    contador++;
+    if(contador == 9) {
+        contador = 0;
+        for(let a=0; a<9;a++) {
+            imagenes[a].style.visibility="visible";
+        }
     }
-    function oculta(i) {
-      puntos[i].style.visibility = "hidden";
 
-      const todosOcultos = puntos.every(p => p.style.visibility == "hidden");
-      if (todosOcultos) {
-        setTimeout(() => {
-        puntos.forEach(p => p.style.visibility = "visible");
-        }, 0);
-      }
-    }
+}
+
+for(let i = 0; i<9;i++) {
+  imagenes[i]=document.createElement("img"); 
+  imagenes[i].src="circle.svg"; 
+  contenedor.insertAdjacentElement("afterbegin",imagenes[i]);
+  imagenes[i].onclick=()=>oculta(i);
+}
 
   </script>
 
