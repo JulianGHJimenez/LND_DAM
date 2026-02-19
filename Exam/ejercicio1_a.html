@@ -1,0 +1,98 @@
+
+<html>
+    <head>
+        <title>Ejercicio1</title>
+        <meta charset="utf-8">
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            #externo {
+                box-sizing: border-box;
+                border: 1px solid red;
+                height: 100%;
+            }
+            .circulo {
+                width: 0px;
+                height: 0px;
+                background-color: #4CAF50;  
+                border: 4px solid #522e7dff;  
+                border-radius: 50%;          
+            }
+            #contenedor {
+                display:grid;
+                height: 100%;
+                grid-template-rows: 1fr 3fr;
+                justify-items: center;
+                align-items: center;
+            }
+            #dashboard {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                width:30%;
+                height:30%;
+                border: 3px solid navy;
+            }
+            #dashboard>div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            button,a {
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="externo">
+            <div id="contenedor">
+                <div id="dashboard">
+                    <div><button onclick="menos()" type="button" id="down" aria-label="Disminuir">▼</button></div>
+                    <div><a id="talla"></a></div>                    
+                    <div><button onclick="mas()" type="button" id="up" aria-label="Incrementar">▲</button></div>
+                    <div><input type="color" id="color"></div>
+                </div>
+                <div class="circulo" id="circulo">
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+
+        let incremento=10;
+        let pixeles= 0;
+
+        let tallas=document.getElementById("talla");
+        let esfera = document.getElementById("circulo");
+        let colores = document.getElementById("color");
+        esfera.onchange(colores);
+
+        function mas() {
+            tallas.innerText=pixeles;
+            pixeles += incremento;
+            esfera.style.fontSize= pixeles;
+            esfera.style.height=pixeles;
+            esfera.style.width= pixeles;
+            if (pixeles > 400) {
+            pixeles = 400;
+        } 
+        }
+        
+          function menos() {
+            tallas.innerText=pixeles;
+            pixeles -= incremento;
+            esfera.style.height=pixeles;
+            esfera.style.width= pixeles;
+            if (pixeles < 0) {
+            pixeles = 0;
+        }
+        }
+
+        
+
+
+    </script>
+</html>

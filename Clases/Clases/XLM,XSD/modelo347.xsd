@@ -1,0 +1,35 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--- tipo simple-->
+
+
+
+<!--- tipo complejo-->
+<xsd:complexType name="tipoNombreFiscal"/>
+ <xsd:simpleContent>
+ <xsd:extension date="xsd:string">
+
+ </xsd:extencion>
+ </xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="tipoElemento">
+<xsd:secuence>
+<xsd:element name="via" type="tipoVia"/>
+<xsd:element name="nombreVia" type="tipoNombreVia"/>
+<xsd:element name="numero" type="tipoNumero"/>
+<xsd:element name="municipio" type="tipoMunicipio"/>
+<xsd:element name="provincia" type="tipoProvincia"/>
+</xsd:secuence>
+
+</xsd:complexType>
+<xsd:complexType name="tipoModelo347">
+<xsd:secuence>
+<xsd:element name="poveedor" type="tipoElemento" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="cliente" type="tipoElemento" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+
+
+<!--- Elemento raiz-->
+<xsd:element name="modelo347" type="tipoModelo347"/>
+</xsd:schema>
