@@ -1,0 +1,59 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- elemento simple -->
+     <xsd:simpleType name="tipoKm">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="1000000"/>
+        </xsd:restriction>
+     </xsd:simpleType>
+     <xsd:simpleType name="tipoYear">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0-9]{4}"></xsd:pattern>
+        </xsd:restriction>
+     </xsd:simpleType>
+     <xsd:simpleType name="tipoFecha">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0-9]{2}-[0-9]{2}-20[2-9][0-9]"></xsd:pattern>
+        </xsd:restriction>
+     </xsd:simpleType>
+    <!-- Elementos Complejos -->
+     <xsd:complexType name="tipoMatricula">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="pais" type="tipoPais" use="required"/> <!--Nos quedamos aqui-->
+            </xsd:extension>
+        </xsd:simpleContent>
+     </xsd:complexType>
+     <xsd:complexType name="tipoKilometraje">
+        <xsd:attribute name="km" type="tipoKm" use="required"/>
+     </xsd:complexType>
+     <xsd:complexType name="tipoMarca">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="modelo" type="xsd:string" use="required"/>
+                <xsd:attribute name="year" type="tipoYear"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+     </xsd:complexType>
+    <xsd:complexType name="tipoEntrada">
+        <xsd:attribute name="fecha" type="tipoFecha" use="required"/>
+    </xsd:complexType>
+
+     <xsd:complexType name="tipoVehiculo">
+<xsd:sequence>
+            <xsd:element name="entrada" type="tipoEntrada"/>
+            <xsd:element name="marca" type="tipoMarca"/>
+            <xsd:element name="kimometraje" minOccurs="0" maxOccurs="1" type="tipoKilometraje"/>
+            <xsd:element name="matricula" type="tipoMatricula"/>
+            <xsd:element name="propietario" type="tipoPropietario"/>
+            <xsd:element name="intervenciones" type="tipoIntervenciones"/>
+</xsd:sequence>
+     </xsd:complexType>
+     <xsd:complexType name="tipoTaller">
+        <xsd:sequence>
+            <xsd:element name="vehiculo" type="tipoVehiculo" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+     </xsd:complexType>
+    <!-- Elemento Raiz -->
+     <xsd:element name="taller" type="tipoTaller"/>
+</xsd:schema>
