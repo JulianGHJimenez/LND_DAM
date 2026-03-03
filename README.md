@@ -1,8 +1,67 @@
 # LND
-Guardado de ejercicios de lnd y pruebas en cada clase
-16-10-2025
-----> Empezamos css
-11-12-2025
-----> Acabamos html, css y JavaScript
-12-01-2026
-----> Empezamos XMS
+Javascript-HTML Cheat Sheet
+Requisitos de finalización
+
+##Selección del Elemento
+
+let elemento, listaElementos;
+
+elemento=document.getElementById("id_elemento");
+
+listaElementos=document.getElementsByTagName("h1");
+
+listaElementos=document.getElementsByClassName("miClaseEspecial");
+
+elemento=document.querySelector("#id_elemento > p:nth-of-type(2)");
+
+##Propiedades de los Elementos
+
+elemento.href="http://lnd.angelmelchor.pro/editor.html";
+
+let atributo=elemento.id;
+
+elemento.innerHTML="<p style='color:red;'>Esto es un párrafo</p>";
+
+let contenido=elemento.innerHTML;
+
+elemento.innerText="Este es solo el contenido";
+
+contenido=elemento.innerText;
+
+elemento.style.color="red"; (color de un elemento)
+
+elemento.style.backgroundColor="lightyellow";  (Color de fondo)
+
+elemento.style.fontSize="1.5em";  (Tamaño de letra en un texto)
+
+elemento.style.heigh= 12;  (Altura del elemento)
+
+elemento.style.width= 12;  (Anchura del elemento)
+
+elemento.style.fontWeight="bold";   (tipo de letra de un texto)
+
+elemento.style.textAlign="center";
+
+elemento.style.justifyContent="space-evenly";
+
+##Creación de Elementos
+
+let padre, elegido, nuevo_elemento;
+
+nuevo_elemento=document.createElement("h3");
+
+padre=document.querySelector("#div_padre");
+
+elegido=document.querySelector("#div_padre > img:last-of-type");
+
+padre.removeChild(elegido);
+
+padre.replaceChild(nuevo_elemento,elegido);
+
+elegido.insertAdjacentElement("beforebegin",nuevo_elemento);
+
+padre.insertAdjacentElement("afterbegin",nuevo_elemento);
+
+padre.insertAdjacentElement("beforeend",nuevo_elemento);
+
+elegido.insertAdjacentElement("afterend",nuevo_elemento);
