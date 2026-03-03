@@ -16,7 +16,7 @@ elemento=document.querySelector("#id_elemento > p:nth-of-type(2)");
 
 ##Propiedades de los Elementos
 
-elemento.href="http://lnd.angelmelchor.pro/editor.html";
+elemento.href="http://web.html";
 
 let atributo=elemento.id;
 
